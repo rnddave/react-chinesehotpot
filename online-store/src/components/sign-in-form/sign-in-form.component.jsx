@@ -42,7 +42,7 @@ const SignInForm = () => {
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
-          alert('incorrect password for email');
+          alert('Nope, that password is incorrect');
           break;
         case 'auth/user-not-found':
           alert('no user associated with this email');
