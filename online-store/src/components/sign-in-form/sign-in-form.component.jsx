@@ -43,6 +43,7 @@ const SignInForm = () => {
       );
       setCurrentUser(user);
 
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
