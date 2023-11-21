@@ -7,7 +7,7 @@ const Home = () => {
     {
       "id": 1,
       "title": "Cookbooks",
-      "imageUrl": "https://i.ibb.co/HPLtNpv/Chinese-Cookbooks.jpg"
+      "imageUrl": "https://i.ibb.co/yRhBbgr/cookbooks.png"
     },
     {
       "id": 2,
