@@ -3,6 +3,7 @@ import { useState, useContext } from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
+// we want the sign-in-form to access user context (to know if anyone signed in basically)
 import { UserContext } from '../../contexts/user.context';
 
 import {
@@ -19,6 +20,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
