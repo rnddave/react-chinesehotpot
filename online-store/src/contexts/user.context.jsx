@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+
+import { onAuthStateChangedListener, createUserDocumentFromAuth } from '../utils/firebase/firebase.utils'
 
 // the 'ACTUAL' value we want to access
 export const UserContext = createContext({
@@ -18,6 +20,17 @@ export const UserProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     // but now we want to pass the important VALUE's (current user and the set() current user)
     const value = { currentUser, setCurrentUser};
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChangedListener((user) => {
+            if(user) {
+                createUserDocumentFromAuth(user);
+            }
+            setCurrentUser(user)
+        });
+
+        return unsubscribe
+    }, []);
 
     // any children can access values inside the useState() 
     return <UserContext.Provider value={value}>{ children }</UserContext.Provider>
@@ -39,7 +52,7 @@ change it to
 
   <React.StrictMode>
     <BrowserRouter>
-    
+
         // this is the new bit !!
         <UserProvider>
             <App />

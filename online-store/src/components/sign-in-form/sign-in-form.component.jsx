@@ -1,10 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
-
-// we want the sign-in-form to access user context (to know if anyone signed in basically)
-import { UserContext } from '../../contexts/user.context';
 
 import {
   signInWithGooglePopup,
@@ -24,15 +21,12 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
@@ -43,7 +37,6 @@ const SignInForm = () => {
         email,
         password
       );
-      setCurrentUser(user);
 
 
       resetFormFields();
