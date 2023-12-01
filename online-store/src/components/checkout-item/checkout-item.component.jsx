@@ -11,7 +11,8 @@ const CheckoutItem = () => {
     return (
         <div> 
             {cartItems.map((cartItem) => {
-                const {id, name, quantity, imageUrl} = cartItem
+                const {id, name, quantity, price, imageUrl} = cartItem
+                const lineItem = price * quantity
 
                 return (
                     <div className='checkout-item-container' key={id}>
@@ -24,7 +25,7 @@ const CheckoutItem = () => {
                             <span className='value'> {quantity} </span>
                             <span className='arrow' onClick={() => addItemToCart(cartItem)}>➡️</span>
                         </div>
-                        <div className='price'>£</div>
+                        <div className='price'>£{lineItem}</div>
                         <div className='remove-button'>
                             <span onClick={() => removeLineItemFromCart(cartItem)}>🚮</span>
                         </div>
