@@ -4,12 +4,12 @@ import { createContext, useState, useEffect } from 'react';
 // import SHOP_DATA from '../shop-data.js';
 import { getCategoriesAndDocuments } from '../utils/firebase/firebase.utils.js';
 
-export const ProductsContext = createContext({
-  products: [],
+export const CategoriesContext = createContext({
+  categoriesMap: {},
 });
 
-export const ProductsProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
+export const CategoriesProvider = ({ children }) => {
+  const [categoriesMap, setCategoriesMap] = useState({});
   // we're using this use-effect to build the initial database entries, 
   // but after running, we should remove otherwise we will re-initialise the database 
   // each time it is run - which probably isn't that useful... 
@@ -22,16 +22,18 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     const getCategoriesMap = async () => {
       const categoryMap = await getCategoriesAndDocuments('caegories'); // NB I mistyped Categories when creating it in DB
-      console.log(categoryMap)
+      //console.log(categoryMap)
+      setCategoriesMap(categoryMap);
     }
 
     getCategoriesMap();
   }, []);
 
-  const value = { products };
+  const value = { categoriesMap };
+  
   return (
-    <ProductsContext.Provider value={value}>
+    <CategoriesContext.Provider value={value}>
       {children}
-    </ProductsContext.Provider>
+    </CategoriesContext.Provider>
   );
 };
