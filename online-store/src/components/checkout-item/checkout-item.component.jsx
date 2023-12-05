@@ -4,35 +4,32 @@ import { CartContext } from '../../contexts/cart-context';
 
 import './checkout-item.styles.scss'
 
+const CheckoutItem = ({cartItem}) => {
+    const {id, name, quantity, price, imageUrl} = cartItem
+    const lineItem = price * quantity
 
-const CheckoutItem = () => {
-    const { cartItems, addItemToCart, removeItemFromCart, removeLineItemFromCart } = useContext(CartContext);
+    const { removeLineItemFromCart, addItemToCart, removeItemFromCart } = useContext(CartContext);
+
+    const clearItemHandler = () => removeLineItemFromCart(cartItem);
+    const addItemHandler = () => addItemToCart(cartItem);
+    const removeItemHandler = () => removeItemFromCart(cartItem);
 
     return (
-        <div> 
-            {cartItems.map((cartItem) => {
-                const {id, name, quantity, price, imageUrl} = cartItem
-                const lineItem = price * quantity
-
-                return (
-                    <div className='checkout-item-container' key={id}>
-                        <div className='image-container'>
-                            <img className='img' src={imageUrl} alt={`${name}`} />
-                        </div>
-                        <div className='name'>{name}</div>
-                        <div className='quantity'>
-                            <span className='arrow' onClick={() => removeItemFromCart(cartItem)}>⬅️</span>
-                            <span className='value'> {quantity} </span>
-                            <span className='arrow' onClick={() => addItemToCart(cartItem)}>➡️</span>
-                        </div>
-                        <div className='price'>£{lineItem}</div>
-                        <div className='remove-button'>
-                            <span onClick={() => removeLineItemFromCart(cartItem)}>🚮</span>
-                        </div>
-                    </div>    
-                )
-            })}
-        </div>
+        <div className='checkout-item-container' key={id}>
+            <div className='image-container'>
+                <img className='img' src={imageUrl} alt={`${name}`} />
+            </div>
+            <div className='name'>{name}</div>
+            <div className='quantity'>
+                <span className='arrow' onClick={removeItemHandler}>&#10094;</span>
+                <span className='value'> {quantity} </span>
+                <span className='arrow' onClick={addItemHandler}>&#10095;</span>
+            </div>
+            <div className='price'>£{lineItem}</div>
+            <div className='remove-button'>
+                <span onClick={clearItemHandler}>&#10005;</span>
+            </div>
+        </div>      
     )
 }
 
