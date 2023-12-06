@@ -1,4 +1,4 @@
-import Categories from '../../components/categories/categories.component';
+import Directory from '../../components/directory/directory.component';
 
 const Home = () => {
 
@@ -32,7 +32,7 @@ const Home = () => {
   ];
 
   // we want to call our categories component (which will then call the category items)
-  return <Categories categories={categories} />;
+  return <Directory categories={categories} />;
 };
 
 export default Home;
