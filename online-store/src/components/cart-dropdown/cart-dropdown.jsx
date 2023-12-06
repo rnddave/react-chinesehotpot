@@ -7,9 +7,7 @@ import { CartContext } from '../../contexts/cart-context';
 
 import {
     CartDropdownStyle,
-    EmpytMessage,
     CartItems,
-    CartButton,
 } from './cart-dropdown.styles'
 
 const CartDropdown = () => {
