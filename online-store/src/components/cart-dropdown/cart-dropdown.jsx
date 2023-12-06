@@ -6,8 +6,9 @@ import CartItem from '../cart-item/cart-item';
 import { CartContext } from '../../contexts/cart-context';
 
 import {
-    CartDropdownStyle,
+    CartDropdownContainer,
     CartItems,
+    EmptyMessage,
 } from './cart-dropdown.styles'
 
 const CartDropdown = () => {
@@ -19,14 +20,19 @@ const CartDropdown = () => {
     };
 
     return (
-        <CartDropdownStyle >
+        <CartDropdownContainer >
             <CartItems> 
-                {cartItems.map((item) => (
+{/*                 {cartItems.map((item) => (
                     <CartItem key={item.id} cartItem={item} />
-                ))}
+                ))} */}
+                {cartItems.length ? (
+                    cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+                ) : (
+                    <EmptyMessage>Your cart is empty</EmptyMessage>
+                )}
             </CartItems>
             <Button onClick={goToCheckout}>Checkout</Button>
-        </CartDropdownStyle>
+        </CartDropdownContainer>
     );
 };
 
