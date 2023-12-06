@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Fragment, useContext } from 'react';
 
 import CartIcon from '../../components/cart-icon/cart-icon';
@@ -10,8 +10,15 @@ import { CartContext } from '../../contexts/cart-context';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-
-import './main-menu.styles.scss'
+// we are now using styled-components instead of scss,
+// meaning we need to import more from the 'styleshee' 
+// but the benefits include uniquly generated names which moves us away from CSS name clashes
+import {
+  NavigationContainer,
+  NavLinks,
+  LogoContainer,
+  NavLink,
+} from './main-menu.styles'
 
 const Navigation = () => {
 
@@ -21,32 +28,32 @@ const Navigation = () => {
   // console.log(currentUser);
   return (
       <Fragment>
-        <div className='navigation'>
-          <Link className='logo-container' to='/'>
+        <NavigationContainer>
+          <LogoContainer to='/'>
               <Logo className='logo' />
-          </Link>
-          <div className='nav-links-container'>
-            <Link className='nav-link' to='/shop'>
+          </LogoContainer>
+          <NavLinks>
+            <NavLink to='/shop'>
               SHOP
-            </Link>
+            </NavLink>
 
             {currentUser ? (
-              <span className='nav-link' onClick={signOutUser}>
+              <NavLink as='span' onClick={signOutUser}>
                 SIGN OUT
-              </span>
+              </NavLink>
             ) : (
-              <Link className='nav-link' to='/auth'>
+              <NavLink to='/auth'>
                 SIGN IN
-              </Link>
+              </NavLink>
             )}
 
             <CartIcon />
 
-          </div>
+          </NavLinks>
           
           {cartShow && <CartDropdown />}
 
-        </div>
+        </NavigationContainer>
         <Outlet />
       </Fragment>
     );
