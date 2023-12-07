@@ -54,7 +54,7 @@ export const addCollectionAndDocuments = async (
 };
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, 'caegories'); // NB I mis-named this when creating it in first place
+  const collectionRef = collection(db, 'categories'); // NB I mis-named this when creating it in first place
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);

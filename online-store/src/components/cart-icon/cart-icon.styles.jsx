@@ -20,6 +20,7 @@ export const CartItemCount = styled.div`
   font-size: 10px;
   font-weight: bold;
   bottom: 12px;
+  color: rgb(217, 28, 28);
 `;
 
 // cart-icon.styles.scss 
