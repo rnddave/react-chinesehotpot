@@ -33,6 +33,8 @@ export const ProductCartContainer = styled.div`
       display: flex;
     }
   }
+
+
 `;
 
 export const Footer = styled.div`
