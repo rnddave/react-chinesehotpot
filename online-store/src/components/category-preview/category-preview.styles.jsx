@@ -14,9 +14,13 @@ font-size: 28px;
 `;
 
 export const CategoryPreviewPreview = styled.div`
-display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  @media (max-width: 495px) {
+    flex-direction: column;
+    grid-template-columns: none;
+  }
 `;
 
 /* .category-preview-container {
