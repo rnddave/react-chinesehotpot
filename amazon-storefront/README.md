@@ -1,5 +1,5 @@
 
-# Chinese Hotpot is now an Amazon Storefront with Blog attached
+# Amazon Storefront with Blog
 
 This project is a storefront built with Vite and React, designed to curate Amazon products to help users experience authentic Chinese cuisine at home. It also includes a blog section where users can read about Chinese culture, restaurants, and personal experiences.
 
