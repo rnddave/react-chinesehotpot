@@ -7,6 +7,9 @@ const Post = styled.div`
     padding: 1rem;
     margin: 1rem;
     background: white;
+
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
 `;
 
 const BlogPost = ({ post }) => {

@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const BlogPage = styled.div`
   padding: 2rem;
   background: white;
+
+background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
 `;
 
 const Blog = () => {

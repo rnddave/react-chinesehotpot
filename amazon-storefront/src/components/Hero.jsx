@@ -6,17 +6,27 @@ const HeroSection = styled.section`
   background: #fff;
   border-bottom: 1px solid #FF0000;
   text-align: center;
+
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
+
 `;
 
 const HeroTitle = styled.h1`
   font-size: 2.5rem;
   color: #FF0000;
+
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
 `;
 
 const HeroDescription = styled.p`
   font-size: 1.25rem;
   color: #333;
   margin-top: 1rem;
+
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
 `;
 
 const Hero = () => {

@@ -6,6 +6,9 @@ const Card = styled.div`
     padding: 1rem;
     margin: 1rem;
     background: white;
+
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
 `;
 
 const ProductCard = ({ product }) => {
