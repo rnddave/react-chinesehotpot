@@ -1,31 +1,51 @@
-import React from "react";
-import ProductCard from "../components/ProductCard";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/ProductCard';
+import BlogPost from '../components/BlogPost';
+import Hero from '../components/Hero';
+import styled from 'styled-components';
 
 const HomePage = styled.div`
-    padding: 2rem;
-    background; white;
+  padding: 2rem;
+  background: white;
 `;
 
 const Home = () => {
-    
-    // somewhere to put products for now, 
-    // we'll probably need to move this later else will get to big
-    const products = [
-        // products here
-    ];
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredPosts, setFeaturedPosts] = useState([]);
 
-    return (
-        <HomePage>
-            <h1>Chinese Hotpot</h1>
-            <div>
-                {products.map(product => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-        </HomePage>
-    );
+  useEffect(() => {
+    fetch('/data/featuredProducts.json')
+      .then(response => response.json())
+      .then(data => setFeaturedProducts(data.slice(0, 6))); 
+  }, []);
+  
+  useEffect(() => {
+    fetch('/data/blogPosts.json')
+      .then(response => response.json())
+      .then(data => setFeaturedPosts(data));
+  }, []);
+
+  return (
+    <HomePage>
+      <Hero />
+      <section>
+        <h2>Featured Products</h2>
+        <div>
+          {featuredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2>Featured Blog Posts</h2>
+        <div>
+          {featuredPosts.map(post => (
+            <BlogPost key={post.id} post={post} />
+          ))}
+        </div>
+      </section>
+    </HomePage>
+  );
 };
 
 export default Home;
-

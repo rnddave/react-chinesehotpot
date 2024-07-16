@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import styled from 'styled-components';
 
@@ -8,16 +8,20 @@ const ProductsPage = styled.div`
 `;
 
 const Products = () => {
-  const products = [
-    // Currently on home page, but this makes no sense.
-    // makes more sense to add product details here
-  ];
+  const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/products.json')
+      .then(response => response.json())
+      .then(data => setAllProducts(data));
+  }, []);
+  
 
   return (
     <ProductsPage>
       <h1>Our Products</h1>
       <div>
-        {products.map(product => (
+        {allProducts.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
