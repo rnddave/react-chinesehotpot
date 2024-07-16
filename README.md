@@ -3,6 +3,8 @@
 
 This project is a storefront built with Vite and React, designed to curate Amazon products to help users experience authentic Chinese cuisine at home. It also includes a blog section where users can read about Chinese culture, restaurants, and personal experiences.
 
+If you are looking for the old React Storefront project, this is still available in the directory `online-store` whereas the current project is sitting in the `amazon-storefront` directory.
+
 ## Features
 
 - Display of featured products with links to Amazon.
