@@ -1,0 +1,70 @@
+{
+  "hash": "dcbae577",
+  "configHash": "3c68472b",
+  "lockfileHash": "2778b535",
+  "browserHash": "df896873",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "dfc568c9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4e7477b9",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "83475395",
+      "needsInterop": false
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "e96253f2",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "e3ee9b53",
+      "needsInterop": false
+    },
+    "gray-matter": {
+      "src": "../../node_modules/gray-matter/index.js",
+      "file": "gray-matter.js",
+      "fileHash": "4b84adf6",
+      "needsInterop": true
+    },
+    "remark": {
+      "src": "../../node_modules/remark/index.js",
+      "file": "remark.js",
+      "fileHash": "73a233d5",
+      "needsInterop": false
+    },
+    "remark-html": {
+      "src": "../../node_modules/remark-html/index.js",
+      "file": "remark-html.js",
+      "fileHash": "831b21d7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-YEGEUSQR": {
+      "file": "chunk-YEGEUSQR.js"
+    },
+    "chunk-7JZAKNLV": {
+      "file": "chunk-7JZAKNLV.js"
+    },
+    "chunk-LPETT53D": {
+      "file": "chunk-LPETT53D.js"
+    },
+    "chunk-2TUXWMP5": {
+      "file": "chunk-2TUXWMP5.js"
+    }
+  }
+}
