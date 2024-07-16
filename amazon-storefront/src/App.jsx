@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Blog from './pages/Blog';
+import Post from './pages/Post';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyles';
 import { lightTheme, darkTheme } from './Themes';
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<Post />} />
         </Routes>
       </Router>
     </ThemeProvider>

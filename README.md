@@ -1,21 +1,141 @@
-# An Online Store (Project)
 
-An online store built with React {project}
+# Chinese Hotpot is now an Amazon Storefront with Blog attached
 
-We're using 
-- ![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-- ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-- ![React-Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-- ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
-- ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
-- ![Redux-Saga](https://img.shields.io/badge/Redux%20saga-86D46B?style=for-the-badge&logo=redux%20saga&logoColor=999999)
-- ![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
-- ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-- ![GraphQL](https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+This project is a storefront built with Vite and React, designed to curate Amazon products to help users experience authentic Chinese cuisine at home. It also includes a blog section where users can read about Chinese culture, restaurants, and personal experiences.
 
+## Features
 
-See the project [Here](https://chinesehotpot.co.uk)
+- Display of featured products with links to Amazon.
+- Blog section for sharing posts about Chinese culture and cuisine.
+- Dark mode support.
+- Responsive design.
 
+## Project Structure
 
+```
+.
+├── public
+│   └── data
+│       └── featuredProducts.json
+├── src
+│   ├── components
+│   │   ├── Hero.jsx
+│   │   └── ProductCard.jsx
+│   ├── pages
+│   │   ├── Blog.jsx
+│   │   ├── Home.jsx
+│   │   └── Post.jsx
+│   ├── posts
+│   │   ├── 2024-07-15-getting-married-in-china.md
+│   │   └── 2024-07-16-another-post.md
+│   ├── utils
+│   │   └── loadPosts.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── package.json
+└── vite.config.js
+```
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/amazon-storefront.git
+   cd amazon-storefront
+   ```
+
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To start the development server, run:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To build the application for production, run:
+```bash
+npm run build
+```
+The production-ready files will be in the `dist` directory.
+
+## Configuration
+
+### Vite Configuration
+
+The Vite configuration file (`vite.config.js`) includes polyfills and aliases to ensure compatibility with the browser environment:
+
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
+
+export default defineConfig({
+  plugins: [
+    react(),
+  ],
+  resolve: {
+    alias: {
+      buffer: 'buffer',
+    },
+    extensions: ['.js', '.jsx', '.md'],
+  },
+  assetsInclude: ['**/*.md'],
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          buffer: true,
+        }),
+        NodeModulesPolyfillPlugin(),
+      ],
+    },
+  },
+});
+```
+
+## Blog Posts
+
+Blog posts are written in Markdown and stored in the `src/posts` directory. Each post should follow the naming convention `YYYY-MM-DD-post-title.md` and include front matter for metadata:
+
+```markdown
+---
+title: 'My Post Title'
+date: '2024-07-16'
+---
+
+This is the content of the blog post. You can use **markdown** here.
+```
+
+## Future Improvements
+
+- Implement server-side rendering (SSR) for better SEO and faster load times using a framework like Next.js.
+- Enhance the product listing with more detailed information and user reviews.
+- Add more interactive elements to the blog posts, such as comments and likes.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
-import BlogPost from '../components/BlogPost';
 import Hero from '../components/Hero';
 import styled from 'styled-components';
 
@@ -14,18 +13,11 @@ const HomePage = styled.div`
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [featuredPosts, setFeaturedPosts] = useState([]);
 
   useEffect(() => {
     fetch('/data/featuredProducts.json')
       .then(response => response.json())
-      .then(data => setFeaturedProducts(data.slice(0, 6))); 
-  }, []);
-  
-  useEffect(() => {
-    fetch('/data/blogPosts.json')
-      .then(response => response.json())
-      .then(data => setFeaturedPosts(data));
+      .then(data => setFeaturedProducts(data.slice(0, 6)));
   }, []);
 
   return (
@@ -36,14 +28,6 @@ const Home = () => {
         <div>
           {featuredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-      <section>
-        <h2>Featured Blog Posts</h2>
-        <div>
-          {featuredPosts.map(post => (
-            <BlogPost key={post.id} post={post} />
           ))}
         </div>
       </section>

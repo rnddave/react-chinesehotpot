@@ -1,33 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import BlogPost from '../components/BlogPost';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { getSortedPostsData } from '../utils/loadPosts';
 
 const BlogPage = styled.div`
   padding: 2rem;
   background: white;
 
-background: ${({ theme }) => theme.body};
+  background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
+`;
+
+const PostLink = styled.div`
+  margin-bottom: 1rem;
 `;
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('/data/blogPosts.json')
-      .then(response => response.json())
-      .then(data => setPosts(data));
+    const fetchPosts = async () => {
+      const postsData = await getSortedPostsData();
+      console.log('All posts on Blog:', postsData); // Log all posts
+      setPosts(postsData);
+    };
+    fetchPosts();
   }, []);
-  
 
   return (
     <BlogPage>
       <h1>Blog</h1>
-      <div>
-        {posts.map(post => (
-          <BlogPost key={post.id} post={post} />
-        ))}
-      </div>
+      {posts.map(({ id, date, title }) => (
+        <PostLink key={id}>
+          <Link to={`/blog/${id}`}>
+            <h2>{title}</h2>
+            <small>{date}</small>
+          </Link>
+        </PostLink>
+      ))}
     </BlogPage>
   );
 };
