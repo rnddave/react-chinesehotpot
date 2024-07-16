@@ -13,7 +13,7 @@ const Navbar = styled.nav`
         background: #333;
         color: white;
     }
-`
+`;
 
 const Header = ({ toggleTheme }) => {
     return (
