@@ -1,7 +1,6 @@
 --- 
 title: 'We went to Chengdu'
 date: '2024-07-02'
-featured: true
 ---
 
 [Chengdu](https://en.wikipedia.org/wiki/Chengdu) was where my wife and I spent our honeymoon. We used the city as a base to explore the immediate area around this relatively clean city, visit an old friend of my wife's, and make new friends.

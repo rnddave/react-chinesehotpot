@@ -1,7 +1,6 @@
 --- 
 title: 'The Wedding Ceremony'
 date: '2023-10-03'
-featured: false
 ---
 
 If this was an English wedding, the big day would probably be the day of the legal marriage. In fact, I’m not sure if I’ve ever heard of an English wedding ceremony taking place on a different date than that of the legal ceremony, but in China, well, things are different.

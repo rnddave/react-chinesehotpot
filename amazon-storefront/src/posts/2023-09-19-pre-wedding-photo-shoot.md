@@ -1,7 +1,6 @@
 --- 
 title: 'The Pre-Wedding Photo-shoot'
 date: '2023-09-19'
-featured: false
 ---
 
 The day starts with a quick breakfast, of course, this being rural China, the breakfast is still considered to be one of the major meals and therefore even a quick breakfast is relatively hearty when compared to something you might find on most English breakfast tables.

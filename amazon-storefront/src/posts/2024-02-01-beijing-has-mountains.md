@@ -1,7 +1,6 @@
 --- 
 title: 'Beijing has Mountains!!'
 date: '2024-02-01'
-featured: false
 ---
 
 In 2022, Beijing became the first city to have hosted both the Summer & Winter Olympics. For those of us that have been to Beijing, you’ll know that it is big, impressive, busy, loud, but mostly flat. 

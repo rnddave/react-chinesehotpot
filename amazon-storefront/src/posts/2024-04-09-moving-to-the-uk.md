@@ -1,7 +1,6 @@
 --- 
 title: 'Chinese National moving to the UK'
 date: '2024-04-09'
-featured: false
 ---
 
 My wife is a Chinese national, after marrying, our plans were always to return to the UK and to start our married lives together in my home country. This was, as it turns out, easier said than done. This is not exactly simple, but to be honest, it’s also not exactly hard.

@@ -1,7 +1,6 @@
 --- 
 title: 'Visit Xi'an'
 date: '2024-01-14'
-featured: false
 ---
 
 For the people that know me, you’ll know I don’t really care for the normal tourist trail. I like to see the real world, not the bit that has been polished just for me.

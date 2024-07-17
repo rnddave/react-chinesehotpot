@@ -1,7 +1,6 @@
 --- 
 title: 'Chengdu Research Base of Giant Panda Breeding'
 date: '2023-02-05'
-featured: false
 ---
 
 If you’re visiting Sichuan, or especially, Chengdu, then this has to be at the top of your list, and at around 60 RMB (about £6) for entry, it’s an absolute bargain!

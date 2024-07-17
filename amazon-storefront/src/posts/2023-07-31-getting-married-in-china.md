@@ -1,7 +1,6 @@
 --- 
 title: 'So you want to get Married in China?'
 date: '2023-07-31'
-featured: true
 ---
 
 I’m going to start this blog with a post about my experiences, as an English man, marrying the love of my life, a Chinese woman, in China. I’m probably going to jump around in following blog entries to explain how I got to the point of getting married in China, but to get things going, I’m going to talk about how I married a Chinese national inside China, so let’s start with how you might prove that you’re single…

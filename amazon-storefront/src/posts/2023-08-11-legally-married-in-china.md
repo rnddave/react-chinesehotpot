@@ -1,7 +1,6 @@
 ---
 title: 'Legally Married in China'
 date: '2023-08-11'
-featured: false
 ---
 
 ### So you’ve got your single certificate, what next?

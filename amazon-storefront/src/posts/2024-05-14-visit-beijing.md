@@ -1,7 +1,6 @@
 --- 
 title: 'Beijing; Where to Stay and Getting Around'
 date: '2024-05-14'
-featured: true
 ---
 
 This has to be **my favourite city in the world**. It’s just mental, but in a good way. I like cities, I like the skylines and the general pace, I can really appreciate the architecture of buildings, both old and new. Of course, not all cities are created equally, somewhere like St David’s in Wales doesn’t quite deliver on those points, but it has other charms.
