@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: white;
+  /* background: white; */
   color: #333;
   background: url('./src/assets/cropped-ddxw2.jpg') left top / cover no-repeat fixed;
   position: relative;
