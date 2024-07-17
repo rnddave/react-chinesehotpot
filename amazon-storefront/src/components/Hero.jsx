@@ -25,8 +25,13 @@ const HeroDescription = styled.p`
   color: #333;
   margin-top: 1rem;
 
+  background: url('/assets/cropped-ddxw2.jpg') left top / cover no-repeat fixed;
+  position: relative;
+
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
+
+  
 `;
 
 const Hero = () => {
