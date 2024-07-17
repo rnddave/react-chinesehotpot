@@ -4,13 +4,8 @@ body {
   padding: 0;
   /* background: white; */
   color: #333;
-  background: url('./src/assets/cropped-ddxw2.jpg') left top / cover no-repeat fixed;
+  background: url('/assets/cropped-ddxw2.jpg') left top / cover no-repeat fixed;
   position: relative;
-}
-
-.dark-mode {
-  background: #121212;
-  color: white;
 }
 
 body::before {
@@ -23,3 +18,9 @@ body::before {
   background: rgba(255, 255, 255, 0.5); 
   z-index: -1;
 }
+
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
